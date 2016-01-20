@@ -26,14 +26,30 @@
     [super viewDidLoad];
     MagicalCreature *puff = [MagicalCreature new];
     puff.name = @"Puff";
+    puff.image = [UIImage imageNamed:@"Puff"];
+    puff.detail = @"origi-puff";
     
-    MagicalCreature *yeti = [MagicalCreature new];
-    yeti.name = @"Yeti";
+    MagicalCreature *lilPuff = [MagicalCreature new];
+    lilPuff.name = @"LilPuff";
+    lilPuff.image = [UIImage imageNamed:@"CrazyPuff"];
+    lilPuff.detail = @"tiny ass puff";
     
-    MagicalCreature *nessi = [MagicalCreature new];
-    nessi.name = @"Nessi";
+    MagicalCreature *bigPuff = [MagicalCreature new];
+    bigPuff.name = @"BigPuff";
+    bigPuff.image = [UIImage imageNamed:@"BigPuff"];
+    bigPuff.detail = @"Big ass puff";
     
-    self.creatures = [NSMutableArray arrayWithObjects:puff, yeti, nessi, nil];
+    MagicalCreature *megaPuff = [MagicalCreature new];
+    megaPuff.name = @"MegaPuff";
+    megaPuff.image = [UIImage imageNamed:@"MegaPuff"];
+    megaPuff.detail = @"King of Puffs";
+    
+    
+    self.creatures = [[NSMutableArray alloc] initWithObjects:puff, lilPuff, bigPuff, megaPuff, nil];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 
@@ -41,6 +57,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = [self.creatures[indexPath.row] name];
+    cell.detailTextLabel.text = [self.creatures[indexPath.row] detail];
     return cell;
 }
 
