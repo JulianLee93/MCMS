@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4bt-8T-vJ4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4bt-8T-vJ4">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -17,6 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Opn-tz-9oO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xAu-Go-iJO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Up3-gR-zh5">
@@ -153,19 +155,20 @@
                                 <exclude reference="rLs-rl-lvM"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Yr1-im-EN8"/>
                                 <exclude reference="TC3-hQ-ENg"/>
                                 <exclude reference="Xd2-aL-L7a"/>
                                 <exclude reference="aDn-6c-B8G"/>
                                 <exclude reference="dCO-9K-owj"/>
                                 <exclude reference="ztK-fR-Nkt"/>
-                                <exclude reference="K4v-9q-gr4"/>
-                                <exclude reference="xE1-6r-BUy"/>
-                                <exclude reference="eMz-NJ-aHm"/>
                                 <exclude reference="3ez-iY-FQP"/>
                                 <exclude reference="YTF-Ih-fBt"/>
                                 <exclude reference="eYT-4Q-owR"/>
                                 <exclude reference="fwg-CC-gxZ"/>
                                 <exclude reference="qIX-Cq-1m5"/>
+                                <exclude reference="eMz-NJ-aHm"/>
+                                <exclude reference="K4v-9q-gr4"/>
+                                <exclude reference="xE1-6r-BUy"/>
                                 <exclude reference="4vM-fy-lTX"/>
                                 <exclude reference="SbS-yQ-ZLp"/>
                                 <exclude reference="nF8-fl-51l"/>
@@ -175,7 +178,6 @@
                                 <exclude reference="buO-kK-BpQ"/>
                                 <exclude reference="e61-dp-QJr"/>
                                 <exclude reference="pRc-F8-VnB"/>
-                                <exclude reference="Yr1-im-EN8"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -189,19 +191,20 @@
                                 <include reference="rLs-rl-lvM"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Yr1-im-EN8"/>
                                 <include reference="TC3-hQ-ENg"/>
                                 <include reference="Xd2-aL-L7a"/>
                                 <include reference="aDn-6c-B8G"/>
                                 <include reference="dCO-9K-owj"/>
                                 <include reference="ztK-fR-Nkt"/>
-                                <include reference="K4v-9q-gr4"/>
-                                <include reference="xE1-6r-BUy"/>
-                                <include reference="eMz-NJ-aHm"/>
                                 <include reference="3ez-iY-FQP"/>
                                 <include reference="YTF-Ih-fBt"/>
                                 <include reference="eYT-4Q-owR"/>
                                 <include reference="fwg-CC-gxZ"/>
                                 <include reference="qIX-Cq-1m5"/>
+                                <include reference="eMz-NJ-aHm"/>
+                                <include reference="K4v-9q-gr4"/>
+                                <include reference="xE1-6r-BUy"/>
                                 <include reference="4vM-fy-lTX"/>
                                 <include reference="SbS-yQ-ZLp"/>
                                 <include reference="nF8-fl-51l"/>
@@ -211,7 +214,6 @@
                                 <include reference="buO-kK-BpQ"/>
                                 <include reference="e61-dp-QJr"/>
                                 <include reference="pRc-F8-VnB"/>
-                                <include reference="Yr1-im-EN8"/>
                             </mask>
                         </variation>
                     </view>
@@ -320,7 +322,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monster name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiV-F8-ifH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Monster name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiV-F8-ifH">
                                 <rect key="frame" x="34" y="72" width="294" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="EYP-a3-GsF">
@@ -344,7 +346,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzw-el-6Mc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bzw-el-6Mc">
                                 <rect key="frame" x="40" y="242" width="303" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bzw-el-6Mc" secondAttribute="height" multiplier="188:157" id="oVz-Vx-O5H"/>
@@ -360,7 +362,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y9z-e1-O80">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y9z-e1-O80">
                                 <rect key="frame" x="34" y="112" width="303" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Gmq-50-wQ6"/>
@@ -383,14 +385,15 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TZf-Vt-nOU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TZf-Vt-nOU">
                                 <rect key="frame" x="61" y="489" width="240" height="59"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="2YB-8W-ooO">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2YB-8W-ooO" id="4jf-SB-svW">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -451,12 +454,12 @@
                                 <exclude reference="e34-xq-BPu"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="WUa-Uk-mrs"/>
+                                <exclude reference="vNf-9a-iUq"/>
                                 <exclude reference="3H1-an-CmT"/>
                                 <exclude reference="khQ-Lw-iNH"/>
                                 <exclude reference="LdO-Ls-U7j"/>
                                 <exclude reference="pD8-3q-cWJ"/>
-                                <exclude reference="WUa-Uk-mrs"/>
-                                <exclude reference="vNf-9a-iUq"/>
                                 <exclude reference="3LU-Sa-dw9"/>
                                 <exclude reference="C6R-Vm-naW"/>
                                 <exclude reference="tB3-Rr-MgQ"/>
@@ -472,12 +475,12 @@
                                 <include reference="e34-xq-BPu"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="WUa-Uk-mrs"/>
+                                <include reference="vNf-9a-iUq"/>
                                 <include reference="3H1-an-CmT"/>
                                 <include reference="khQ-Lw-iNH"/>
                                 <include reference="LdO-Ls-U7j"/>
                                 <include reference="pD8-3q-cWJ"/>
-                                <include reference="WUa-Uk-mrs"/>
-                                <include reference="vNf-9a-iUq"/>
                                 <include reference="3LU-Sa-dw9"/>
                                 <include reference="C6R-Vm-naW"/>
                                 <include reference="tB3-Rr-MgQ"/>

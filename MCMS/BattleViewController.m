@@ -24,6 +24,7 @@
     [super viewDidLoad];
     [self.creatureImage1 setImage:self.creature1.image];
     [self.creatureImage2 setImage:self.creature2.image];
+    self.creatureImage1.class
     [self.creatureLabel1 setText:self.creature1.name];
     [self.creatureLabel2 setText:self.creature2.name];
 

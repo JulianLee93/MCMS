@@ -60,6 +60,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     cell.textLabel.text = [self.creatures[indexPath.row] name];
     cell.detailTextLabel.text = [self.creatures[indexPath.row] detail];
+    cell.imageView.image = (UIImage *)[self.creatures[indexPath.row] image];
     return cell;
 }
 
