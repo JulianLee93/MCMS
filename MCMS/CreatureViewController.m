@@ -8,14 +8,14 @@
 
 #import "CreatureViewController.h"
 
-@interface CreatureViewController ()
+@interface CreatureViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (weak, nonatomic) IBOutlet UILabel *creatureNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *creatureEditNameTextField;
-@property (weak, nonatomic) IBOutlet UILabel *creatureDetailLabel;
-@property (weak, nonatomic) IBOutlet UITextField *creatureDetailTextField;
+@property (weak, nonatomic) IBOutlet UITextView *creatureDetailLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *creatureImage;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -25,9 +25,9 @@
     [super viewDidLoad];
     self.creatureEditNameTextField.hidden = TRUE;
     self.creatureNameLabel.text = self.creature.name;
-    self.creatureDetailTextField.hidden = TRUE;
     self.creatureDetailLabel.text = self.creature.detail;
     self.creatureImage.image = self.creature.image;
+    self.creatureDetailLabel.editable = FALSE;
     
 }
 
@@ -40,9 +40,11 @@
         self.creature.name = self.creatureEditNameTextField.text;
         self.creatureNameLabel.text = self.creature.name;
         
-        self.creatureDetailTextField.hidden = TRUE;
-        self.creature.detail = self.creatureDetailTextField.text;
+        self.creatureDetailLabel.editable = FALSE;
+        self.creature.detail = self.creatureDetailLabel.text;
         self.creatureDetailLabel.text = self.creature.detail;
+        
+        self.creatureDetailLabel.layer.borderWidth = 0.0f;
         
         self.title = self.creature.name;
     }else{
@@ -50,12 +52,33 @@
         
         self.creatureEditNameTextField.hidden = FALSE;
         self.creatureEditNameTextField.text = self.creature.name;
+
+        self.creatureDetailLabel.editable = TRUE;
+        self.creatureDetailLabel.text = self.creature.detail;
         
-        self.creatureDetailTextField.hidden = FALSE;
-        self.creatureDetailTextField.text = self.creature.detail;
+        self.creatureDetailLabel.layer.borderWidth = 0.7f;
+        self.creatureDetailLabel.layer.borderColor = [[[UIColor grayColor] colorWithAlphaComponent:0.35] CGColor];
+        self.creatureDetailLabel.layer.cornerRadius = 5.0f;
+
     }
     
 }
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCell"];
+    cell.textLabel.text = self.creature.accessories[indexPath.row];
+    return cell;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.creature.accessories.count;
+}
+
+
+
 
 /*
 #pragma mark - Navigation

@@ -9,6 +9,7 @@
 #import "RootViewController.h"
 #import "MagicalCreature.h"
 #import "CreatureViewController.h"
+#import "BattleViewController.h"
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -28,11 +29,12 @@
     puff.name = @"Puff";
     puff.image = [UIImage imageNamed:@"Puff"];
     puff.detail = @"origi-puff";
+    puff.accessories = [[NSMutableArray alloc] initWithObjects:@"Water gun - 1 atk", @"Pipe - 4 atk", @"Spiked Mace - 32 atk", @"Bazooka - 152 atk", nil];
     
     MagicalCreature *lilPuff = [MagicalCreature new];
-    lilPuff.name = @"LilPuff";
-    lilPuff.image = [UIImage imageNamed:@"CrazyPuff"];
-    lilPuff.detail = @"tiny ass puff";
+    lilPuff.name = @"CrazyPuff";
+    lilPuff.image = [UIImage imageNamed:@"LilPuff"];
+    lilPuff.detail = @"Crazy ass puff";
     
     MagicalCreature *bigPuff = [MagicalCreature new];
     bigPuff.name = @"BigPuff";
@@ -82,10 +84,24 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CreatureViewController *destination = segue.destinationViewController;
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    destination.creature = self.creatures[indexPath.row];
-    destination.title = [[self.creatures objectAtIndex:indexPath.row] name];
+    
+    if ([segue.identifier isEqualToString:@"BattleSegue"]) {
+        BattleViewController *destination = segue.destinationViewController;
+        destination.creature1 = self.creatures[arc4random_uniform((int)self.creatures.count)];
+        destination.creature2 = self.creatures[arc4random_uniform((int)self.creatures.count)];
+        while (destination.creature2 == destination.creature1) {
+            destination.creature2 = self.creatures[arc4random_uniform((int)self.creatures.count)];
+        }
+        
+    }
+    else
+    {
+        CreatureViewController *destination = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        destination.creature = self.creatures[indexPath.row];
+        destination.title = [[self.creatures objectAtIndex:indexPath.row] name];
+    }
+    
 }
 
 

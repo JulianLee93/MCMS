@@ -14,5 +14,6 @@
 @property NSString *name;
 @property NSString *detail;
 @property UIImage *image;
+@property NSMutableArray *accessories;
 
 @end
